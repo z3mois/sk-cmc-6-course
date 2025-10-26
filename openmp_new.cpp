@@ -99,7 +99,7 @@ double max_error(const std::vector<double> &u, double t, int N,
                  double hx, double hy, double hz,
                  double Lx, double Ly, double Lz, double at) {
     double m = 0.0;
-    #pragma omp parallel for collapse(3) reduction(max:m) schedule(static)
+    #pragma omp parallel for collapse(3) reduction(max:m)
     for (int i = 1; i < N; ++i)
       for (int j = 1; j < N; ++j)
         for (int k = 1; k < N; ++k) {
